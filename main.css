@@ -3,10 +3,9 @@
 ================*/
 header, 
 .amsterdam {  
-  /*加了阿姆斯不知為何就展開了*/
   height: 90vh;  /*如果要改vh,bottom也需要改*/
   display: flex;
-  justify-content: center;
+  justify-content: center;  /*anim從中間展開了*/
   align-items:center;
 }
 /* header {
@@ -37,10 +36,20 @@ header,
   font-weight: var(--fw-bold);
   font-size: var(--fs-h1);
 }
-@media (max-width: 500px){
+@media (max-width: 800px){
     .amsterdam{
-        font-size: var(--fs-h3);
+        /* font-size: var(--fs-h3); */
+        animation: amsterdam 2s steps(9);
     }
+    header, 
+    .amsterdam {  
+    /*加了阿姆斯不知為何就展開了*/
+    height: 90vh;  /*如果要改vh,bottom也需要改*/
+    /* flex-flow: column wrap; */  /*改變這個可改變anim*/
+  }
+  #I, #am {
+    display: block;
+  }
 }
 .amsterdam span {
 /*   color: var(--clr-accent); */
@@ -58,19 +67,19 @@ header::after,
 header::before {
   position: absolute;
   content: '';
-  width: 180px;
+  width: 115px;
   height: 70px;
   bottom: 5%;  /*如果要改vh這裡也需要改*/
   background: var(--clr-light);
 }
 header::before {
   right: 50%;
-  transform: skew(0, 20deg);
+  transform: skew(0, 25deg);
 }
 
 header::after {
   left: 50%;
-  transform: skew(0, -20deg);
+  transform: skew(0, -25deg);
 }
 /*=======================
 
