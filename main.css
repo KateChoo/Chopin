@@ -1,0 +1,372 @@
+/*==============
+    HEADER
+================*/
+header, 
+.amsterdam {  
+  /*加了阿姆斯不知為何就展開了*/
+  height: 90vh;  /*如果要改vh,bottom也需要改*/
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+/* header {
+  background: linear-gradient(to left, red 50%, #fff 50%);
+} */
+.amsterdam {
+/*   display: grid; */
+/*   grid-template-columns: 1fr 1fr; */
+/*   grid-template-rows: auto-flow; */
+/*   background: linear-gradient(to left, red 60%, #fff 40%); */
+}
+#I {
+  color: var(--clr-accent);
+  background: var(--clr-light);
+/*   display: inline-block; */
+}
+#am {
+  color: var(--clr-light);
+  background: var(--clr-accent);
+/*   display:inline-block; */
+}
+.amsterdam{
+  overflow: hidden; /*auto就會有一條怪線在下面*/
+  animation: amsterdam 2s steps(16);
+  white-space: nowrap; /*同一條線不分行*/
+/*   width: 22ch;  取消這個就不會突然暴衝往前*/
+  color:var(--clr-light);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h1);
+}
+@media (max-width: 500px){
+    .amsterdam{
+        font-size: var(--fs-h3);
+    }
+}
+.amsterdam span {
+/*   color: var(--clr-accent); */
+}
+@keyframes amsterdam {
+  0% {
+    width: 0ch;
+  }
+  100% {
+    width: 16ch;
+  }
+}
+/*ARROW*/
+header::after,
+header::before {
+  position: absolute;
+  content: '';
+  width: 180px;
+  height: 70px;
+  bottom: 5%;  /*如果要改vh這裡也需要改*/
+  background: var(--clr-light);
+}
+header::before {
+  right: 50%;
+  transform: skew(0, 20deg);
+}
+
+header::after {
+  left: 50%;
+  transform: skew(0, -20deg);
+}
+/*=======================
+
+=========================*/
+/* .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  } */
+.tab input {
+    position:absolute;
+    left: 0;
+    top: 0;
+    z-index: -999;
+  }
+  /*we will be using an input label to toggle the radio button, so we we click on the label*/
+  
+  .tab label {
+    /* background:;
+    color:;
+    line-height:; */
+    display: block;
+    font-weight: bold;
+    transition: letter-spacing .55s;
+  }
+  span{
+    font-size: 1.5em;
+  }
+
+  .tab span:after{
+    opacity: 0;
+  }
+  
+  /*what is this focus and label*/
+  .tab input:focus + label, 
+  .tab label:hover,
+  .tab:hover span:after {
+    letter-spacing: 1px;
+    
+    content: '\2193';
+    transition: .55s;
+    opacity: 1;
+  }
+  
+  /*****/
+  .tab-content {
+    max-height:0;  /***把下面的內容藏起來***/
+    overflow:hidden; /*****/
+    transition: all .35s;
+    /*試試看*/
+/*     background: firebrick; 
+    border-radius: 5px; */
+  }
+  .tab-content h2,
+  .tab-content p {
+    margin: 1em 0;
+  }
+  
+  .tab input:checked ~ .tab-content {
+    max-height: 100%; 
+    max-width: 100%;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+/*========================
+
+==========================*/
+/* The actual timeline (the vertical ruler) */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: ''; /*沒有這個就什麼都沒有*/
+    position: absolute;
+    width: 6px;
+    background-color: firebrick;
+    top: 0;
+    bottom: 0;
+    left: 50%; /*置中*/
+    margin-left: -6px; /*喬OO*/
+  }
+  
+  /* Container around content */
+  .container {
+    padding: 10px 40px;
+    position: relative;/*indifference*/
+    background-color: inherit;/*indifference*/
+    width: 50%;/*indifference*/
+     /*試試看*/
+/*     background: firebrick; */
+  }
+  
+  /* The circles on the timeline */
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -10px;
+    background-color: #FFF;
+/*     #FFF5EE */
+    border: 4px solid firebrick;
+  /*   #FF9F55 */
+    top: 14px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;   /*->*/
+    border: medium solid #FFF5EE;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent firebrick;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;   /*<-*/
+    border: medium solid firebrick;
+/*     #FFF5EE */
+    border-width: 10px 10px 10px 0;
+    border-color: transparent firebrick transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -14px;  /*喬OO*/
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color: #FFF;
+/*     #FFF5EE */
+    position: relative;
+    border-radius: 6px;
+    /*試試看*/
+    border: 1px solid firebrick; 
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+    .timeline::after {
+      left: 31px;
+    }
+  
+  /* Full-width containers */
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+  /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+  /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+      left: 15px;
+    }
+  
+  /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+  }
+/*======================
+  FOOTER
+  ========================*/
+.watermark {
+  grid-column: 2;
+  grid-row: 3;
+  align-self: start;
+}
+.watermark a:hover {
+  color: var(--clr-accent);
+}
+.footer{
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1em 1fr 1em;
+/*   grid-template-rows: 1em 1fr 1em; */
+/*   grid-template-rows: repeat(3, 1fr); */
+  background:url("pianoforte.png") no-repeat fixed center;
+  height: 100vh;
+  object-fit: cover;
+  background-size: 500px 100px;
+  opacity: 0.5;
+  z-index: 1;
+}
+/*======================
+  
+  ========================*/
+body {
+  background: var(--clr-dark);
+/*   display: grid;
+  grid-template-column: minmax(5em 6em) auto minmax(5em 6em) */
+}
+header {
+    background: var(--clr-light);
+    font-family: 'Courgette', cursive;
+    font-family: 'Rye', cursive;
+}
+.chronicalBody {
+  background: var(--clr-dark);
+/*   margin-top: 3em; */
+}
+#myHeader {
+  text-align: center;
+  padding-top: 1em;
+  font-family: 'Dancing Script', cursive;
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+/*   font-family: 'Parisienne', cursive; */
+}
+  h2, footer, a{
+    text-align: center;
+    margin: 1em auto;
+    text-decoration:none;
+    color: var(--clr-light);
+  }
+.chronicalBody span {
+  color: var(--clr-dark);
+}
+.chronicalFooter,
+.watermark {
+  font-family: 'Dancing Script', cursive;
+/*       font-family: 'Parisienne', cursive;
+    font-family: 'Rye', cursive; */
+}
+*,
+*::before,
+*::after {
+    box-sizing:border-box;
+}
+
+:root {
+    --ff-primary:'Courgette', cursive;
+    --ff-secondary:'source Code Pro',monospace;
+  
+    --fw-reg: 300;
+    --fw-bold: 900;
+  
+    --clr-light: #fff;
+    --clr-dark: #232323;
+    --clr-accent: red;
+  
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+  
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+@media (min-width: 800px){
+  :root {
+    --fs-h1: 3.5rem;
+    --fs-h2: 3.25rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+}

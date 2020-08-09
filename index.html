@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Chopin Chronical </title>
+    <link rel="stylesheet" href="https://github.com/necolas/normalize.css.git">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  </head>
+  <header>
+    <h1 class="amsterdam">
+        <a href="#" onClick="window.location.reload();">
+        <span id="I">Chopin</span>
+        <span id="am">   Chronical</span>
+        </a>
+    </h1>
+</header>
+
+<body>
+    <section class="chronicalBody">
+    <h2 id="myHeader">A Journey of Music and Life</h2>
+   
+    <div class="timeline tab-group flip-card">
+
+        <!--Label One-->
+        <div class="container left tab flip-card-inner">
+            <div class="content front">
+                <input id="tab-1" type="radio" name="tabs">
+                <label for="tab-1"><span>1817</span></label>
+                <div class="tab-content">
+                    <p>蕭邦七歲，此曲過世後才被發表。</p>
+                    <p>Polonaise in G minor</p>
+            <!--         <div class="video"> -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/XhNaIwGbiOA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!--       </div>  -->
+                </div> <!--tab-content-->
+            </div> <!--container-->
+                <!--     
+                <div class="content back">
+                    <h2>2017</h2>
+                    <p>back</p>
+                </div>  -->
+                </div><!--tab-->
+        
+        <!--Label Two-->
+        <div class="container right tab">
+            <div class="content front">
+                <input id="tab-2" type="radio" name="tabs">
+                <label for="tab-2"><span>1824-1825</span></label>
+                <div class="tab-content">
+                    <p>蕭邦在Szafarnia過暑假，參加了許多猶太人的聚會，此曲受此影響。</p>
+                    <p>Mazurka 17-4 A-flat minor</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Zbxmca163Nc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div> <!--tab-content-->
+            </div> <!--content-->
+        </div><!--tab-->
+        
+        <!--Label Three-->
+        <div class="container left tab flip-card-inner">
+            <div class="content front">
+                <input id="tab-3" type="radio" name="tabs">
+                <label for="tab-3"><span>1825-1826</span></label>
+                <div class="tab-content">
+                    <p>俄國尼古拉一世即位，加冕為波蘭國王，強硬的手腕令某些波蘭人反感，在這個氛圍下，波蘭受愛戴的政治人物Stanistaw Staszic去世。這個時期蕭邦最小的妹妹肺結核過世。</p>
+                    <p>Funeral March in C minor</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9kB8ANRmQyE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div> <!--tab-content-->
+            </div> <!--content-->
+        </div><!--tab-->
+        
+        <!--Label Four-->
+        <div class="container right ">
+            <div class="content front tab">
+                <input id="tab-4" type="radio" name="tabs">
+                <label for="tab-4"><span>1826-1829</span></label>
+                <div class="tab-content">
+                    <p>受John Field影響的創作。</p>
+                    <p>Nocturn in E minor op.72 no.1</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/h5_V-d8HjhU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div> <!--tab-content-->
+            </div> <!--content-->
+        </div><!--tab-->
+        
+    </div> <!--tab-group-->
+        
+    <footer class="chronicalFooter">
+        <a href="#">
+        For all the Maestros who brings music to life. 
+        </a>
+    </footer>
+        
+        
+    <section class="footer">
+        <a class="watermark" href="https://katechoo.github.io/" target="_blank">
+        <div class="watermark">
+            2020 &copy;K Choo｜All Rights Reserved.
+        </div>
+        </a>
+    </section>
+  
+  <script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+    </script>
+    
+  </body>
+
+
+</html>
