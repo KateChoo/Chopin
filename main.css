@@ -319,7 +319,7 @@ header {
     font-family: 'Courgette', cursive;
     font-family: 'Rye', cursive;
 }
-.chronicalBody {
+.chronicleBody {
   background: var(--clr-dark);
 /*   margin-top: 3em; */
 }
@@ -337,10 +337,10 @@ header {
     text-decoration:none;
     color: var(--clr-light);
   }
-.chronicalBody span {
+.chronicleBody span {
   color: var(--clr-dark);
 }
-.chronicalFooter,
+.chronicleFooter,
 .watermark {
   font-family: 'Dancing Script', cursive;
 /*       font-family: 'Parisienne', cursive;
