@@ -49,6 +49,7 @@ header,
   }
   #I, #am {
     display: block;
+    font-size: inherit;
   }
 }
 .amsterdam span {
@@ -63,23 +64,25 @@ header,
   }
 }
 /*ARROW*/
-header::after,
-header::before {
-  position: absolute;
-  content: '';
-  width: 115px;
-  height: 70px;
-  bottom: 5%;  /*如果要改vh這裡也需要改*/
-  background: var(--clr-light);
-}
-header::before {
-  right: 50%;
-  transform: skew(0, 25deg);
-}
+@media (min-width: 800px){
+  header::after,
+  header::before {
+    position: absolute;
+    content: '';
+    width: 150px;
+    height: 110px;
+    bottom: 5%;  /*如果要改vh這裡也需要改*/
+    background: var(--clr-light);
+  }
+  header::before {
+    right: 50%;
+    transform: skew(0, 25deg);
+  }
 
-header::after {
-  left: 50%;
-  transform: skew(0, -25deg);
+  header::after {
+    left: 50%;
+    transform: skew(0, -25deg);
+  }
 }
 /*=======================
 
