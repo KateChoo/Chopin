@@ -64,14 +64,14 @@ header,
   }
 }
 /*ARROW*/
-@media (min-width: 800px){
+@media (min-width: 800px)and (min-height:840px){
   header::after,
   header::before {
     position: absolute;
     content: '';
     width: 150px;
     height: 110px;
-    bottom: 5%;  /*如果要改vh這裡也需要改*/
+    bottom: 7%;  /*如果要改vh這裡也需要改*/
     background: var(--clr-light);
   }
   header::before {
